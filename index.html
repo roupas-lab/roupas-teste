@@ -1,11 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="VÉRTICE — moda contemporânea, peças versáteis e estilo para todos os dias.">
+<title>VÉRTICE — Vista sua identidade</title>
+<style>
+:root{--ink:#191919;--muted:#777;--paper:#f7f6f2;--accent:#b7c7b0;--line:#e6e3dc;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}
+.topbar{background:var(--ink);color:#fff;text-align:center;padding:10px 16px;font-size:11px;letter-spacing:1.7px;text-transform:uppercase}
+header{height:78px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.logo{font-size:25px;font-weight:900;letter-spacing:5px}.logo span{color:#80947b}
+nav{display:flex;gap:30px;font-size:12px;letter-spacing:1.3px;text-transform:uppercase}nav a:hover{opacity:.55}
+.cart{border:1px solid var(--ink);background:transparent;padding:10px 15px;font-size:11px;letter-spacing:1px;text-transform:uppercase}.cart b{background:var(--ink);color:white;border-radius:50%;padding:3px 6px;margin-left:5px}
+.hero{min-height:570px;display:grid;grid-template-columns:1fr 1fr;background:#e9e8e1}
+.hero-copy{padding:90px 10% 70px 13%;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#697566;font-weight:700}
+h1{font-family:Georgia,serif;font-size:clamp(48px,6vw,82px);line-height:.98;font-weight:400;margin:22px 0}
+.hero p{max-width:390px;color:#555;line-height:1.8;font-size:14px}
+.cta{display:inline-block;margin-top:22px;background:var(--ink);color:#fff;padding:16px 25px;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;border:1px solid var(--ink);transition:.2s}
+.cta:hover{background:transparent;color:var(--ink)}
+.hero-art{min-height:570px;position:relative;overflow:hidden;background:linear-gradient(145deg,#c7cbbf,#8c9b88 55%,#596958)}
+.hero-art:before{content:"";position:absolute;width:55%;height:78%;left:22%;top:12%;background:linear-gradient(100deg,#252a28,#555e55 48%,#202522);clip-path:polygon(25% 0,42% 0,50% 8%,58% 0,75% 0,100% 23%,82% 42%,73% 31%,78% 100%,22% 100%,27% 31%,18% 42%,0 23%);filter:drop-shadow(15px 18px 12px #30383055)}
+.hero-art:after{content:"VÉRTICE / COLEÇÃO 01";position:absolute;bottom:30px;right:35px;color:#fff;font-size:10px;letter-spacing:3px}
+.art-circle{position:absolute;width:330px;height:330px;border:1px solid #ffffff55;border-radius:50%;top:18%;left:27%}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);padding:28px 7%;background:#fff;border-bottom:1px solid var(--line);gap:15px}
+.benefit{text-align:center;font-size:11px;letter-spacing:1.2px;text-transform:uppercase}.benefit strong{display:block;font-size:19px;font-weight:400;margin-bottom:5px}
+section.shop{padding:85px 7% 100px}
+.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:32px}.section-head h2{font:400 clamp(35px,4vw,48px) Georgia,serif;margin:8px 0 0}.section-head p{color:var(--muted);font-size:12px}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:28px}
+.filter{border:1px solid #c9c6bd;background:transparent;padding:10px 17px;font-size:10px;letter-spacing:1px;text-transform:uppercase}
+.filter.active,.filter:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.product{min-width:0}.product-image{height:310px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#e5e3dc}
+.product-image .shape{width:53%;height:72%;position:relative;filter:drop-shadow(12px 15px 10px #0002);transition:transform .35s}
+.product:hover .shape{transform:scale(1.05)}
+.shape.shirt{background:linear-gradient(100deg,#d5d0c5,#f0eee8 48%,#c5c0b5);clip-path:polygon(25% 0,42% 0,50% 8%,58% 0,75% 0,100% 23%,82% 42%,73% 31%,78% 100%,22% 100%,27% 31%,18% 42%,0 23%)}
+.shape.pants{height:78%;width:48%;background:linear-gradient(90deg,#333a39,#626b65 50%,#29302e);clip-path:polygon(12% 0,88% 0,100% 100%,58% 100%,50% 42%,42% 100%,0 100%)}
+.shape.jacket{background:linear-gradient(90deg,#4e5d51,#8c9989 50%,#435044);clip-path:polygon(25% 0,42% 0,50% 8%,58% 0,75% 0,100% 23%,82% 42%,73% 31%,78% 100%,22% 100%,27% 31%,18% 42%,0 23%)}
+.shape.dress{height:83%;width:46%;background:linear-gradient(90deg,#9b7769,#c7a394 50%,#8f6c60);clip-path:polygon(35% 0,65% 0,72% 18%,100% 100%,0 100%,28% 18%)}
+.product-tag{position:absolute;top:13px;left:13px;background:#fff;padding:7px 9px;font-size:9px;letter-spacing:1px;text-transform:uppercase}
+.product-info{padding:15px 2px}.product-info h3{font-size:13px;font-weight:500;margin:0 0 8px}.product-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px}.price{font-weight:700}
+.add{width:100%;margin-top:13px;padding:12px;background:transparent;border:1px solid #aaa;font-size:10px;letter-spacing:1.2px;text-transform:uppercase}.add:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.about{display:grid;grid-template-columns:1fr 1fr;background:#dfe3da}.about-art{min-height:390px;background:linear-gradient(135deg,#aab6a4,#e4e4d9);display:flex;align-items:center;justify-content:center}.about-art span{font:italic 42px Georgia;color:#fff;letter-spacing:4px}.about-copy{padding:70px 12%;display:flex;flex-direction:column;justify-content:center}.about-copy h2{font:400 43px Georgia;margin:15px 0}.about-copy p{font-size:13px;line-height:1.9;color:#555}
+.newsletter{text-align:center;padding:75px 20px;background:#fff}.newsletter h2{font:400 38px Georgia;margin:10px}.newsletter p{font-size:12px;color:var(--muted)}.newsletter form{display:flex;max-width:430px;margin:25px auto 0}.newsletter input{flex:1;min-width:0;padding:14px;border:1px solid #ccc;background:transparent}.newsletter button{padding:0 18px;background:var(--ink);color:#fff;border:0;font-size:10px;letter-spacing:1px}
+footer{background:var(--ink);color:#fff;padding:45px 7%;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}footer .logo{font-size:20px}footer p{font-size:11px;color:#aaa;line-height:1.8}footer a{font-size:11px;color:#ddd}
+.notice{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--ink);color:#fff;padding:13px 20px;font-size:12px;transition:.3s;z-index:20}.notice.show{transform:translateX(-50%) translateY(0)}
+.cart-panel{position:fixed;inset:0;background:#0006;z-index:10;display:none;justify-content:flex-end}.cart-panel.open{display:flex}.cart-box{background:var(--paper);width:min(420px,100%);height:100%;padding:28px;overflow:auto}.cart-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:15px}.cart-top h2{font:32px Georgia}.close{border:0;background:none;font-size:25px}.cart-items{padding:20px 0}.cart-row{display:flex;justify-content:space-between;gap:15px;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}.remove{border:0;background:none;text-decoration:underline;color:#777;font-size:11px}.total{display:flex;justify-content:space-between;font-weight:700;padding:18px 0}
+
+/* Refinamento visual — edição de demonstração */
+:root{--paper:#f5f4ef;--accent:#a8b69f;--ink:#171a17;--line:#deded5}
+body{letter-spacing:.08px}
+.topbar{font-size:9px;letter-spacing:2px;padding:12px 14px;background:#171a17}
+.topbar span{color:#a8b69f;padding:0 8px}
+header{height:84px;padding-inline:7%;backdrop-filter:blur(14px);background:#f5f4eff2}
+.logo{font-size:23px;letter-spacing:6px}
+nav{gap:34px;font-size:10px;letter-spacing:1.7px}
+nav a{position:relative;padding:8px 0}
+nav a:after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:currentColor;transition:width .25s}
+nav a:hover:after{width:100%}
+.cart{font-size:10px;letter-spacing:1.5px;padding:11px 16px}
+.hero{min-height:620px;background:#e6e8df}
+.hero-copy{padding-left:15%}
+.eyebrow{font-size:9px;letter-spacing:3.2px}
+h1{font-size:clamp(55px,6.5vw,91px);letter-spacing:-2.5px;line-height:.94}
+.hero p{font-size:13px;line-height:2;max-width:360px}
+.cta{font-size:10px;letter-spacing:2px;padding:17px 25px}
+.hero-art{background:radial-gradient(ellipse at 50% 45%,#c2cbbd 0%,#a2b09d 42%,#778675 100%)}
+.hero-art:before{width:51%;height:77%;left:24%;background:linear-gradient(100deg,#202622,#596458 48%,#222923)}
+.art-circle{width:370px;height:370px;border-color:#ffffff66}
+.benefits{padding:31px 9%;background:#fbfaf7}
+.benefit{font-size:9px;letter-spacing:1.7px;color:#555}
+.benefit strong{font-size:21px;color:#71806e;margin-bottom:8px}
+section.shop{padding:100px 8% 110px}
+.section-head h2{letter-spacing:-1px}
+.section-head p{letter-spacing:.3px}
+.filter{font-size:9px;letter-spacing:1.5px;padding:11px 18px}
+.product-image{height:340px;background:#e9e8e1}
+.product-tag{font-size:8px;letter-spacing:1.5px}
+.product-info h3{font-size:12px;letter-spacing:.3px}
+.product-meta{font-size:11px;color:#666}
+.price{color:#171a17}
+.add{font-size:9px;letter-spacing:1.7px;padding:14px;border-color:#bdbdb4;transition:.2s}
+.about{background:#e1e5dc}
+.about-art{background:linear-gradient(145deg,#9eaa99,#dce0d5)}
+.about-art span{font-size:clamp(30px,4vw,48px);letter-spacing:2px}
+.about-copy h2{font-size:clamp(38px,4vw,52px);line-height:1.04;letter-spacing:-1px}
+.about-copy p{font-size:12px;line-height:2}
+.newsletter{padding:90px 20px;background:#fbfaf7}
+.newsletter h2{font-size:42px;letter-spacing:-1px}
+.newsletter input{font-size:12px}
+footer{padding:55px 8%;background:#171a17}
+footer .logo{letter-spacing:5px}
+footer p{letter-spacing:.5px}
+.whatsapp-float{position:fixed;right:25px;bottom:25px;z-index:8;display:flex;align-items:center;gap:11px;padding:13px 19px 13px 15px;border-radius:999px;background:#237b50;color:white;box-shadow:0 8px 28px #17281f35;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;transition:transform .2s,box-shadow .2s}
+.whatsapp-float:hover{transform:translateY(-3px);box-shadow:0 12px 32px #17281f4d}
+.whatsapp-float svg{width:20px;height:20px;fill:currentColor;flex:none}
+.whatsapp-float .wa-label{display:block}
+@media(max-width:850px){.hero-copy{padding-left:9%}section.shop{padding-inline:6%}.product-image{height:300px}}
+@media(max-width:600px){.topbar{font-size:8px;letter-spacing:1px}.topbar span{padding:0 3px}header{height:70px}.hero-copy{padding:65px 8%}.hero-art{min-height:370px}.benefits{padding:23px 3%}.benefit{font-size:8px;letter-spacing:.8px}section.shop{padding:65px 5%}.product-image{height:225px}.whatsapp-float{right:14px;bottom:14px;padding:13px;border-radius:50%}.whatsapp-float .wa-label{display:none}.about-copy{padding:55px 8%}}
+
+@media(max-width:850px){nav{gap:13px} .products{grid-template-columns:repeat(2,1fr)}.product-image{height:280px}.hero-copy{padding:65px 8%}.hero-art{min-height:500px}}
+@media(max-width:600px){header{height:66px;padding:0 5%}.logo{font-size:20px}nav{display:none}.hero{grid-template-columns:1fr}.hero-copy{padding:65px 8%}.hero-art{min-height:360px}.benefits{padding:22px 4%;gap:7px}.benefit{font-size:9px}.benefit strong{font-size:15px}section.shop{padding:60px 5%}.products{gap:12px}.product-image{height:220px}.section-head{display:block}.section-head p{margin-top:10px}.about{grid-template-columns:1fr}.about-art{min-height:240px}.about-copy{padding:50px 8%}.newsletter form{max-width:100%}}
+</style>
 </head>
 <body>
-    
-</body>
-</html>
+<div class="topbar">ENVIO PARA TODO O BRASIL <span>·</span> FRETE GRÁTIS ACIMA DE R$ 299 <span>·</span> ATENDIMENTO PERSONALIZADO</div>
+<header>
+<a class="logo" href="#">VÉRTICE<span>.</span></a>
+<nav><a href="#inicio">Início</a><a href="#colecao">Coleção</a><a href="#sobre">Manifesto</a><a href="#contato">Contato</a></nav>
+<button class="cart" id="openCart">Sacola <b id="cartCount">0</b></button>
+</header>
+<main>
+<section class="hero" id="inicio">
+<div class="hero-copy"><span class="eyebrow">VÉRTICE STUDIO — COLEÇÃO 001</span><h1>O essencial.<br>Com intenção.</h1><p>Uma seleção contemporânea de peças atemporais, pensadas para acompanhar seu ritmo e expressar sua identidade com naturalidade.</p><a class="cta" href="#colecao">Explorar coleção <span aria-hidden="true">↗</span></a></div>
+<div class="hero-art"><div class="art-circle"></div></div>
+</section>
+<div class="benefits"><div class="benefit"><strong>✳</strong>Estilo sem esforço</div><div class="benefit"><strong>◇</strong>Qualidade selecionada</div><div class="benefit"><strong>↗</strong>Compra fácil e segura</div></div>
+<section class="shop" id="colecao">
+<div class="section-head"><div><span class="eyebrow">Curadoria Vértice</span><h2>Favoritos da coleção</h2></div><p>Encontre seu próximo favorito.</p></div>
+<div class="filters"><button class="filter active" data-filter="todos">Todos</button><button class="filter" data-filter="camisetas">Camisetas</button><button class="filter" data-filter="calcas">Calças</button><button class="filter" data-filter="terceira">Terceira peça</button></div>
+<div class="products" id="products">
+<article class="product" data-category="camisetas" data-name="Camiseta Essencial" data-price="89.90"><div class="product-image"><span class="product-tag">Mais vendido</span><div class="shape shirt"></div></div><div class="product-info"><h3>Camiseta Essencial</h3><div class="product-meta"><span>Off-white · Algodão</span><span class="price">R$ 89,90</span></div><button class="add">Adicionar à sacola</button></div></article>
+<article class="product" data-category="calcas" data-name="Calça Minimal" data-price="159.90"><div class="product-image"><div class="shape pants"></div></div><div class="product-info"><h3>Calça Minimal</h3><div class="product-meta"><span>Grafite · Reta</span><span class="price">R$ 159,90</span></div><button class="add">Adicionar à sacola</button></div></article>
+<article class="product" data-category="terceira" data-name="Jaqueta Horizonte" data-price="229.90"><div class="product-image"><span class="product-tag">Novo</span><div class="shape jacket"></div></div><div class="product-info"><h3>Jaqueta Horizonte</h3><div class="product-meta"><span>Verde · Casual</span><span class="price">R$ 229,90</span></div><button class="add">Adicionar à sacola</button></div></article>
+<article class="product" data-category="terceira" data-name="Vestido Aurora" data-price="189.90"><div class="product-image"><div class="shape dress"></div></div><div class="product-info"><h3>Vestido Aurora</h3><div class="product-meta"><span>Terracota · Midi</span><span class="price">R$ 189,90</span></div><button class="add">Adicionar à sacola</button></div></article>
+</div>
+</section>
+<section class="about" id="sobre"><div class="about-art"><span>menos, melhor.</span></div><div class="about-copy"><span class="eyebrow">01 / Nosso manifesto</span><h2>Menos excesso.<br>Mais expressão.</h2><p>Acreditamos em um guarda-roupa inteligente: peças versáteis, design cuidadoso e conforto que acompanha a vida real. A VÉRTICE nasce para vestir pessoas, não tendências passageiras.</p><a class="cta" href="#colecao">Conheça as peças</a></div></section>
+<section class="newsletter" id="contato"><span class="eyebrow">Fique por dentro</span><h2>Novidades no seu e-mail.</h2><p>Cadastre-se para receber lançamentos e novidades da loja.</p><form id="newsletter"><input type="email" placeholder="Seu melhor e-mail" required aria-label="Seu e-mail"><button type="submit">CADASTRAR</button></form></section>
+</main>
+<footer><div><div class="logo">VÉRTICE.</div><p>Vista sua identidade.<br>© 2026 VÉRTICE. Todos os direitos reservados.</p></div><div><p>ATENDIMENTO</p><a href="mailto:contato@verticeloja.com">contato@verticeloja.com</a><p>Instagram · WhatsApp</p></div><div><p>INFORMAÇÕES</p><a href="#sobre">Sobre a loja</a><p><a href="#colecao">Coleção</a></p></div></footer>
+
+<a class="whatsapp-float" href="https://wa.me/5511999999999?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20V%C3%89RTICE%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" aria-label="Fale com a Vértice pelo WhatsApp">
+<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 .0C7.2 0 .1 7.1.1 15.8c0 2.8.7 5.5 2.1 7.9L0 32l8.5-2.2c2.3 1.3 4.9 2 7.5 2h.1c8.7 0 15.8-7.1 15.8-15.8C31.9 7.2 24.8.1 16 .1zm0 29.1c-2.4 0-4.7-.7-6.7-1.9l-.5-.3-5 1.3 1.3-4.9-.3-.5a13.1 13.1 0 0 1-2-7C2.8 8.6 8.7 2.7 16 2.7s13.2 5.9 13.2 13.2S23.3 29.1 16 29.1zm7.2-9.9c-.4-.2-2.3-1.1-2.7-1.2-.4-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.4-.2.3-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.3-2.1-2.7-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.7.1-1 .5-.4.4-1.3 1.3-1.3 3.2s1.4 3.7 1.6 4c.2.3 2.7 4.1 6.5 5.7.9.4 1.6.6 2.1.7.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8-.1-.2-.4-.3-.8-.5z"/></svg>
+<span class="wa-label">Fale conosco</span></a>
+
+<div class="notice" id="notice" role="status"></div>
+<div class="cart-panel" id="cartPanel"><div class="cart-box"><div class="cart-top"><h2>Sua sacola</h2><button class="close" id="closeCart" aria-label="Fechar">×</button></div><div class="cart-items" id="cartItems">Sua sacola está vazia.</div><div class="total"><span>Total</span><span id="cartTotal">R$ 0,00</span></div><button class="cta" style="width:100%" id="checkout">Finalizar pedido</button><p style="font-size:11px;color:#777;line-height:1.6">Demonstração: o checkout precisa ser conectado a um meio de pagamento ou WhatsApp da loja.</p></div></div>
+<script>
+const cart=[];const money=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const notice=document.getElementById('notice');
+function toast(msg){notice.textContent=msg;notice.classList.add('show');setTimeout(()=>notice.classList.remove('show'),2200)}
+document.querySelectorAll('.add').forEach(btn=>btn.addEventListener('click',()=>{const p=btn.closest('.product');cart.push({name:p.dataset.name,price:Number(p.dataset.price)});renderCart();toast('Produto adicionado à sacola!')}));
+function renderCart(){document.getElementById('cartCount').textContent=cart.length;const list=document.getElementById('cartItems');list.innerHTML='';if(!cart.length){list.textContent='Sua sacola está vazia.'}else cart.forEach((item,i)=>{const row=document.createElement('div');row.className='cart-row';const name=document.createElement('span');name.textContent=item.name+' · '+money(item.price);const remove=document.createElement('button');remove.className='remove';remove.textContent='Remover';remove.addEventListener('click',()=>{cart.splice(i,1);renderCart()});row.append(name,remove);list.append(row)});document.getElementById('cartTotal').textContent=money(cart.reduce((s,p)=>s+p.price,0))}
+document.getElementById('openCart').onclick=()=>document.getElementById('cartPanel').classList.add('open');
+document.getElementById('closeCart').onclick=()=>document.getElementById('cartPanel').classList.remove('open');
+document.getElementById('cartPanel').addEventListener('click',e=>{if(e.target.id==='cartPanel')e.currentTarget.classList.remove('open')});
+document.getElementById('checkout').onclick=()=>toast(cart.length?'Checkout demonstrativo: conecte o pagamento para vender.':'Adicione um produto antes de continuar.');
+document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.product').forEach(p=>p.style.display=btn.dataset.filter==='todos'||p.dataset.category===btn.dataset.filter?'':'none')}));
+document.getElementById('newsletter').addEventListener('submit',e=>{e.preventDefault();toast('Cadastro demonstrativo recebido!');e.target.reset()});
+</script>
+</body></html>
